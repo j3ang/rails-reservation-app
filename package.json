@@ -1,7 +1,7 @@
 {
-  "name": "myapp2",
-  "private": true,
-  "dependencies": {
-    "jquery": "^3.3.1"
-  }
+    "name": "rails-reservation-app",
+    "private": true,
+    "dependencies": {
+        "jquery": "^3.3.1"
+    }
 }
