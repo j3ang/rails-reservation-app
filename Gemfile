@@ -50,7 +50,7 @@ group :test do
 end
 
 group :production do
-  gem 'pg' '~> 0.21'
+  gem 'pg', '~> 0.21'
   gem 'memcachier'              # heroku add-on for auto config of dalli
   gem 'unicorn'
   gem 'rails_12factor'          # https://devcenter.heroku.com/articles/rails4
