@@ -5,18 +5,25 @@
     </div>
     <% end %>
 
-    <p id="addNew" class="btn"><i class="fa fa-plus-circle text-success"></i>
-        <%= link_to "New Reservation", new_reservation_path %></p>
+
+    <p>
+        <%= button_to new_reservation_path, class:'btn btn-outline-primary', method: :get do%>
+        <i class="fa fa-plus-circle text-success"> </i>
+        <span> New Reservation</span>
+        <% end %>
+    </p>
+
 
     <h4 class="list-group-item text-capitalize active">All Reservations (<%= @reservations.count %>) </h4>
 
 
     <div class="table-responsive">
-        <table class="table">
+        <table class="table table-sm">
             <thead>
                 <tr>
                     <th>#</th>
                     <th>Name</th>
+                    <th>Size</th>
                     <th>Date/Time</th>
                     <th class="d-none d-lg-table-cell">Phone</th>
                     <th>Action</th>
@@ -28,13 +35,23 @@
                 <tr>
                     <td><%= index+1 %></td>
                     <td class="text-capitalize"><%= link_to reservation.name, reservation_path(reservation)  %></td>
+                    <td><%= reservation.guestNumber %></td>
                     <td><%= reservation.datetime %></td>
                     <td class="d-none d-lg-table-cell"> <%= reservation.phone %></td>
                     <td>
-                        <%= button_to 'Edit', edit_reservation_path(reservation), method: 'get', class:'btn btn-outline-primary w-100'  %>
+                        <%= button_to edit_reservation_path(reservation), class:'btn btn-outline-primary', method: :get do%>
+                        <i class="fa fa-pencil-square-o"></i>
+                        <% end %>
                     </td>
+
+
+
                     <td>
-                        <%= button_to 'Remove', reservation_path(reservation), method: 'delete', data: { confirm: 'Are you sure?' }, class:'btn btn-danger w-100'  %>
+
+                        <%= button_to reservation_path(reservation), class:'btn btn-danger', data: { confirm: 'Are you sure?' }, method: :delete do%>
+                        <i class="fa fa-trash-o"></i>
+                        <% end %>
+
                     </td>
                 </tr>
                 <% end %>
