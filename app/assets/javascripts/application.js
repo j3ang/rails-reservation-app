@@ -14,6 +14,7 @@
 //= require jquery3
 //= require popper
 //= require moment
+//= require jquery_ujs
 //= require bootstrap
 //=require jquery.mask.min.js
 //= require_tree .

@@ -16,7 +16,7 @@ class ReservationsController < ApplicationController
       @reservation = Reservation.create(reservation_params)
       
       if @reservation.save
-            flash[:success]  = "Reservation successfully saved!" 
+            flash[:success]  = "Reservation successfully created!" 
             redirect_to reservations_path
       else
             flash[:error] =  "Error saving the reservation."   
