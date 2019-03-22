@@ -50,7 +50,7 @@ group :test do
   gem 'launchy'
 end
 
-ruby "~> 2.4.5"
+ruby "2.3.0"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
