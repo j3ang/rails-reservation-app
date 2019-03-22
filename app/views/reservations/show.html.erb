@@ -1,0 +1,17 @@
+<div class="container mt-5 pt-2">
+    <p id="backBtn" class="btn text-success"><i class="fa fa-arrow-circle-left"></i> <%= link_to 'Back', :back %></p> 
+
+    <ul class="list-group">
+        <h4 class="list-group-item text-capitalize active"><strong>Name:</strong>  <%= @reservation.name %></h4>
+        <li class="list-group-item text-capitalize"><strong>Number of guest:</strong>  <%= @reservation.guestNumber %></li>
+        <li class="list-group-item text-capitalize"><strong>Date/Time:</strong>  <%= @reservation.datetime %></li>
+        <li class="list-group-item text-capitalize"><strong>Phone:</strong>  <%= @reservation.phone %>  </li>
+        <li class="list-group-item text-capitalize"><strong>Email:</strong> <%= @reservation.email %></li>
+    </ul>
+
+    <div class="row d-flex float-right p-3">
+       <span class="pr-3"> <%= button_to 'Edit', edit_reservation_path(@reservation.id), method: 'get', class:'btn btn-outline-primary'  %></span>
+       <span><%= button_to 'Remove', reservation_path(@reservation.id), method: 'delete', data: { confirm: 'Are you sure?' }, class:'btn btn-danger'  %></span> 
+    </div>
+      
+</div>

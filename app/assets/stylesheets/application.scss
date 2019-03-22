@@ -1,0 +1,54 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *=require rails_bootstrap_forms
+ *= require_self
+ *= require_tree .
+ */
+
+@import 'bootstrap';
+@import 'font-awesome';
+@import "tempusdominus-bootstrap-4.css";
+
+#addNew,
+#backBtn {
+    background-image: none;
+    border-color: #007bff;
+}
+
+.item-control {
+    max-width: 250px;
+    width: 150px;
+}
+
+#reservation_form_box {
+    // max-width: 700px;
+    margin-top: 2%;
+
+
+    form {
+        border-top: dotted 1px;
+        padding-top: 0.8rem;
+        margin-top: 0.8rem;
+
+        label {
+            font-weight: bold;
+        }
+
+
+        .optional::after {
+            content: " optional";
+            font-size: smaller;
+            font-weight: 100;
+            color: gray;
+        }
+    }
+
+}
