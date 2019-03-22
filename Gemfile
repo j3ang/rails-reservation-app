@@ -5,7 +5,8 @@ gem 'rails', '~> 4.2', '>= 4.2.11.1'
 
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3', '~> 1.3.6'
+gem 'sqlite3', '~> 1.3.6', group: :development
+gem 'pg', '0.18.1', group: :production
 
 gem 'ruby-ole'
 
@@ -50,7 +51,6 @@ group :test do
 end
 
 group :production do
-  gem 'sqlite3'
   gem 'memcachier'              # heroku add-on for auto config of dalli
   gem 'unicorn'
   gem 'rails_12factor'          # https://devcenter.heroku.com/articles/rails4
