@@ -20,11 +20,12 @@
     <div class="table-responsive">
         <table class="table table-sm">
             <thead>
-                <tr>
+                <tr class="text-center">
                     <th>#</th>
                     <th>Name</th>
                     <th>Size</th>
-                    <th>Date/Time</th>
+                    <th>Date</th>
+                    <th>Time</th>
                     <th class="d-none d-lg-table-cell">Phone</th>
                     <th>Action</th>
 
@@ -32,14 +33,15 @@
             </thead>
             <tbody>
                 <% @reservations.each_with_index do |reservation, index| %>
-                <tr>
+                <tr class="text-center">
                     <td><%= index+1 %></td>
-                    <td class="text-capitalize"><%= link_to reservation.name, reservation_path(reservation)  %></td>
-                    <td><%= reservation.guestNumber %></td>
-                    <td><%= reservation.datetime %></td>
+                    <td class="text-left text-capitalize"><%= link_to reservation.name, reservation_path(reservation)  %></td>
+                    <td class="font-weight-bold"><%= reservation.guestNumber %></td>
+                    <td><%= reservation.datetime.to_formatted_s(:weekday) %>, <%= reservation.datetime.to_formatted_s(:date) %></td>
+                    <td><%= reservation.datetime.to_formatted_s(:time) %></td>
                     <td class="d-none d-lg-table-cell"> <%= reservation.phone %></td>
                     <td class="d-table-cell">
-                        <%= button_to edit_reservation_path(reservation), class:'btn btn-outline-primary float-left border-0 mr-1', method: :get do%>
+                        <%= button_to edit_reservation_path(reservation), class:'btn btn-outline-primary d-none d-md-table-cell float-left border-0 mr-1', method: :get do%>
                         <i class="fa fa-pencil-square-o"></i>
                         <% end %>
 
