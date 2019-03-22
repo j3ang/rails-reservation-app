@@ -17,7 +17,6 @@ gem 'jquery-mask-plugin'
 gem 'momentjs-rails'
 gem 'sprockets', '2.11.0'
 gem 'bootstrap4-datetime-picker-rails'
-gem 'pg'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.1'
@@ -51,6 +50,7 @@ group :test do
 end
 
 group :production do
+  gem 'pg' '~> 0.21'
   gem 'memcachier'              # heroku add-on for auto config of dalli
   gem 'unicorn'
   gem 'rails_12factor'          # https://devcenter.heroku.com/articles/rails4
