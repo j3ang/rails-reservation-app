@@ -15,7 +15,8 @@
     <ul class="list-group">
         <h4 class="list-group-item text-capitalize active"><strong>Name:</strong>  <%= @reservation.name %></h4>
         <li class="list-group-item text-capitalize"><strong>Number of guest:</strong>  <%= @reservation.guestNumber %></li>
-        <li class="list-group-item text-capitalize"><strong>Date/Time:</strong>  <%= @reservation.datetime.to_formatted_s(:full) %></li>
+        <li class="list-group-item text-capitalize"><strong>Date:</strong>  <%= @reservation.datetime.to_formatted_s(:weekday) %>, <%= @reservation.datetime.to_formatted_s(:date) %> </li>
+        <li class="list-group-item text-capitalize"><strong>Time:</strong>  <%= @reservation.datetime.to_formatted_s(:time) %></li>
         <li class="list-group-item text-capitalize"><strong>Phone:</strong>  <%= @reservation.phone %>  </li>
         <li class="list-group-item text-capitalize"><strong>Email:</strong> <%= @reservation.email %></li>
     </ul>
