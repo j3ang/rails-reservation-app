@@ -1,5 +1,11 @@
 <div id="reservation_form_box" class="container col-xs-12 mt-5 pt-2">
-    <p id="backBtn" class="btn text-success"><i class="fa fa-arrow-circle-left"></i> <%= link_to 'Back', :back %></p> 
+    <% flash.each do |key, value| %>
+        <div class="alert alert-success <%= flash_class(key) %>">
+                <%= value %>
+        </div>
+    <% end %>
+
+    <p id="backBtn" class="btn text-success"><i class="fa fa-arrow-circle-left"></i> <%= link_to 'Back', reservation_path(@reservation) %></p> 
    
     <div>
         <h2 class="text-capitalize">Update reservation details </h2>
@@ -18,7 +24,13 @@
       <!-- Email -->
       <%= f.email_field :email, label: "Email Address", label_class: "optional" %>
       <!-- Submit -->
-      <%= f.submit "Save", class: "btn btn-primary btn-block mt-4 pt-2" %>
+      
+      <div class="d-flex">
+        <span class="col-6 p-0"><%= f.submit "Save", class: "btn btn-outline-primary btn-block mr-2 p-2" %></span>
+        <span class="col-6 p-0"><%= link_to 'Remove', reservation_path(@reservation), method: 'delete', data: { confirm: 'Are you sure?' }, class:'btn btn-danger btn-block ml-2 p-2'  %></span> 
+      </div>
+
+
     <% end %>
     
 </div>

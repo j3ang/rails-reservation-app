@@ -1,19 +1,47 @@
 <div class="container mt-5 pt-2">
-    <p id="addNew" class="btn"><i class="fa fa-plus-circle text-success"></i> <%= link_to "New Reservation", new_reservation_path %></p> 
-    <ul class="list-group">
-        <h4 class="list-group-item text-capitalize active">All Reservations (<%= @reservations.count %>) </h4>
-        <% @reservations.each_with_index do |reservation, index| %>
-        <li class="list-group-item text-capitalize d-flex justify-content-between"> 
-            <span class="text-capitalize">
-                <%= index+1 %>. <%= link_to reservation.name, reservation_path(reservation)  %> 
-            </span>
+    <% flash.each do |key, value| %>
+    <div class="alert alert-success <%= flash_class(key) %>">
+        <%= value %>
+    </div>
+    <% end %>
 
-            <div class="item-control d-flex justify-content-between">
-                <%= button_to 'Edit', edit_reservation_path(reservation), method: 'get', class:'btn btn-outline-primary'  %>
-                <%= button_to 'Remove', reservation_path(reservation), method: 'delete', data: { confirm: 'Are you sure?' }, class:'btn btn-danger'  %>
-            </div>
-           
-        </li>
-        <% end %>
-    </ul>
+    <p id="addNew" class="btn"><i class="fa fa-plus-circle text-success"></i>
+        <%= link_to "New Reservation", new_reservation_path %></p>
+
+    <h4 class="list-group-item text-capitalize active">All Reservations (<%= @reservations.count %>) </h4>
+
+
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Date/Time</th>
+                    <th class="d-none d-lg-table-cell">Phone</th>
+                    <th>Action</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <% @reservations.each_with_index do |reservation, index| %>
+                <tr>
+                    <td><%= index+1 %></td>
+                    <td class="text-capitalize"><%= link_to reservation.name, reservation_path(reservation)  %></td>
+                    <td><%= reservation.datetime %></td>
+                    <td class="d-none d-lg-table-cell"> <%= reservation.phone %></td>
+                    <td>
+                        <%= button_to 'Edit', edit_reservation_path(reservation), method: 'get', class:'btn btn-outline-primary w-100'  %>
+                    </td>
+                    <td>
+                        <%= button_to 'Remove', reservation_path(reservation), method: 'delete', data: { confirm: 'Are you sure?' }, class:'btn btn-danger w-100'  %>
+                    </td>
+                </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
 </div>
