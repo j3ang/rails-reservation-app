@@ -23,6 +23,10 @@
     border-color: #007bff;
 }
 
+.border-dotted {
+    border-style: dotted;
+}
+
 button.btn.btn-outline-primary.float-left.border-0.mr-1:hover {
     background: none;
     color: green;
@@ -41,11 +45,17 @@ table td {
     // max-width: 700px;
     margin-top: 2%;
 
-
-    form {
+    .header {
         border-top: dotted 1px;
         padding-top: 0.8rem;
         margin-top: 0.8rem;
+        border-bottom: dotted 1px;
+        padding-bottom: 0.8rem;
+        margin-bottom: 0.8rem;
+    }
+
+    form {
+
 
         label {
             font-weight: bold;

@@ -1,13 +1,20 @@
-<div id="reservation_form_box" class="container col-xs-12 mt-5 pt-2">
+<div id="reservation_form_box" class="container col-xs-12 mt-5">
     <% flash.each do |key, value| %>
         <div class="alert alert-success <%= flash_class(key) %>">
                 <%= value %>
         </div>
     <% end %>
 
-    <p id="backBtn" class="btn text-success"><i class="fa fa-arrow-circle-left"></i> <%= link_to 'Back', reservation_path(@reservation) %></p> 
-   
-    <div>
+   <p>
+       <%= button_to :back, class:'btn btn-outline-primary', data: { confirm: 'Discard changes?' }, method: :get do%>
+       <i class="fa fa-arrow-circle-left"></i>
+       <span> Back to Home</span>
+       <% end %>
+   </p>
+
+
+
+    <div class="header ">
         <h2 class="text-capitalize">Update reservation details </h2>
         <small class="text-info"> <%= Time.now.asctime %> </small>
     </div>

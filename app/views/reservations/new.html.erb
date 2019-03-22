@@ -1,7 +1,12 @@
-<div id="reservation_form_box" class="container col-xs-12 mt-5 pt-2">
-    <p id="backBtn" class="btn text-success"><i class="fa fa-arrow-circle-left"></i> <%= link_to 'Back', :back %></p> 
+<div id="reservation_form_box" class="container col-xs-12 mt-5">
+    <p>
+        <%= button_to :back, class:'btn btn-outline-primary', method: :get do%>
+        <i class="fa fa-arrow-circle-left"></i>
+        <span> Back to Home</span>
+        <% end %>
+    </p>
 
-    <div>
+    <div class="header">
         <h2>Table Reservation Form</h2>
         <small class="text-info"> <%= Time.now.asctime %> </small>
     </div>

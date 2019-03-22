@@ -1,11 +1,16 @@
-<div class="container mt-5 pt-2">
+<div class="container mt-5">
     <% flash.each do |key, value| %>
         <div class="alert alert-success <%= flash_class(key) %>">
                 <%= value %>
         </div>
     <% end %>
 
-    <p id="backBtn" class="btn text-success"><i class="fa fa-arrow-circle-left"></i> <%= link_to 'Back', reservations_path %></p> 
+<p>
+    <%= button_to :back, class:'btn btn-outline-primary', method: :get do%>
+    <i class="fa fa-arrow-circle-left"></i>
+    <span> Back to Home </span>
+    <% end %>
+</p>
 
     <ul class="list-group">
         <h4 class="list-group-item text-capitalize active"><strong>Name:</strong>  <%= @reservation.name %></h4>
