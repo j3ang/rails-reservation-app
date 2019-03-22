@@ -42,7 +42,7 @@ GEM
       execjs
     bootsnap (1.4.1)
       msgpack (~> 1.0)
-    bootstrap (4.0.0)
+    bootstrap (4.1.3)
       autoprefixer-rails (>= 6.0.3)
       popper_js (>= 1.12.9, < 2)
       sass (>= 3.5.2)
@@ -183,7 +183,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap (>= 1.1.0)
-  bootstrap (~> 4.0.0)
+  bootstrap (~> 4.1.0)
   bootstrap4-datetime-picker-rails
   bootstrap_form
   coffee-rails (~> 4.0.0)

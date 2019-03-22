@@ -10,7 +10,7 @@ gem 'sqlite3', '~> 1.3.6', group: :development
 gem 'ruby-ole'
 
 gem 'bootsnap', '>= 1.1.0', require: false
-gem 'bootstrap', '~> 4.0.0'
+gem 'bootstrap', '~> 4.1.0'
 gem 'bootstrap_form'
 gem 'font-awesome-rails'
 gem 'jquery-mask-plugin'
