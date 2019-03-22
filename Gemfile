@@ -44,10 +44,16 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-
 group :test do
   gem 'database_cleaner'
   gem 'launchy'
+end
+
+group :production do
+  gem 'sqlite3'
+  gem 'memcachier'              # heroku add-on for auto config of dalli
+  gem 'unicorn'
+  gem 'rails_12factor'          # https://devcenter.heroku.com/articles/rails4
 end
 
 ruby "2.6.2"
