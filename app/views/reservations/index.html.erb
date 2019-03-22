@@ -38,17 +38,12 @@
                     <td><%= reservation.guestNumber %></td>
                     <td><%= reservation.datetime %></td>
                     <td class="d-none d-lg-table-cell"> <%= reservation.phone %></td>
-                    <td>
-                        <%= button_to edit_reservation_path(reservation), class:'btn btn-outline-primary', method: :get do%>
+                    <td class="d-table-cell">
+                        <%= button_to edit_reservation_path(reservation), class:'btn btn-outline-primary float-left border-0 mr-1', method: :get do%>
                         <i class="fa fa-pencil-square-o"></i>
                         <% end %>
-                    </td>
 
-
-
-                    <td>
-
-                        <%= button_to reservation_path(reservation), class:'btn btn-danger', data: { confirm: 'Are you sure?' }, method: :delete do%>
+                        <%= button_to reservation_path(reservation), class:'btn btn-danger border-0 rounded-circle', data: { confirm: 'Are you sure?' }, method: :delete do%>
                         <i class="fa fa-trash-o"></i>
                         <% end %>
 
