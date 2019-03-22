@@ -3,6 +3,7 @@ source 'http://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 4.2', '>= 4.2.11.1'
 
+
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.3.6'
 
@@ -49,6 +50,7 @@ group :test do
   gem 'launchy'
 end
 
+ruby "~> 2.3.0"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
